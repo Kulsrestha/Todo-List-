@@ -1,0 +1,36 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Login</h2>
+
+  <div class="control-row">
+    <div class="control no-margin">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      @if(invalidEmail){
+      <p class="control-error">Please enter a valid email</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="role">Select Role</label>
+      <select class="custom-select" id="role" name="role" formControlName="role" required>
+        <option value="Admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+      @if(form.controls.role.touched && form.controls.role.invalid ){
+        <p class="control-error">Please select a role</p>
+        }
+    </div>
+
+    <div class="control no-margin">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" />
+
+      @if(invalidPassword){
+      <p class="control-error">Please enter a valid passowrd (atleast 4 digits)</p>
+      }
+    </div>
+
+    <button class="button">Login</button>
+  </div>
+
+
+</form>

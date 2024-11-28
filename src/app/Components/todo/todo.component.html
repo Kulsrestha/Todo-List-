@@ -1,0 +1,12 @@
+<form class="mx-5" (ngSubmit)="saveTodo()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" [(ngModel)]="title" name="title">
+  </div>
+  <div class="mb-3">
+    <label for="desc" class="form-label">Description</label>
+    <input type="text" class="form-control" [(ngModel)]="description" name="desc">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

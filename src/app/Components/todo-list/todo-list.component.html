@@ -1,0 +1,13 @@
+<div>
+    <h2 *ngIf="todos.length === 0">No todos to display</h2>
+  </div>
+  
+  <ul class="list-group">
+    <li *ngFor="let item of todos; let i = index" class="list-group-item">
+      <h2 [ngClass]="{'done':item.done}">{{ item.title }}</h2>
+      <p>{{ item.description }}</p>
+      <input type="checkbox" (click)="toggleTodo(i)" [checked]="item.done">Mark as done
+      <button class="btn btn-danger" (click)="deleteTodo(i)">Delete</button>
+    </li>
+  </ul>
+  
